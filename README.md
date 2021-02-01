@@ -3,7 +3,9 @@
 # Maven project
 
 Hibernate 5.3.7.Final
+
 postgreSQL 42.2.13
+
 JPA 2.0.1 API
 
 需配置hibernate.cfg.xml
