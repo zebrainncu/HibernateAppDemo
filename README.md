@@ -13,4 +13,5 @@ JPA 2.0.1 API
 與資料表對映,Student.java用Student.hbm.xml 或  mapping class (即用@Entity    @Table  @Id   @Column )
 
 Student.java用Student.hbm.xml方式對映
+
 Student_method2.java用mapping class方式對映
