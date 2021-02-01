@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC Database connection settings -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/testdb</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">123456</property>
+
+        <!-- Select our SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		
+		<property name="connection.pool_size">1</property>      
+ 		<!-- 自動建表  -->
+		<!-- Create table if not exists -->
+		<property name="hibernate.hbm2ddl.auto">update</property>	
+		       
+        <!-- 顯示實際操作資料庫時的SQL  hibernate.show_sql 新版已改為show_sql -->
+        <property name="show_sql">true</property>		
+
+		<!-- 將顯示的SQL排版，方便觀看  -->		
+		<property name="hibernate.format_sql">true</property>
+	        
+        <!-- Set the current session context -->
+        <property name="hibernate.current_session_context_class">thread</property>
+        <!-- Drop and re-create the database schema on startup -->
+        
+
+        <!-- 
+        方式1:mapping resource
+        
+        EX:<mapping resource="Student.hbm.xml" />
+        
+        方式21:mapping class
+        Names the annotated entity class 
+        <mapping class="com.bellab.group.entity.Student"/>
+        -->
+        <!-- 物件與資料庫表格映射文件 --> 	
+        <mapping resource="Student.hbm.xml" />
+        <!-- Annotated entity classes -->
+        <mapping class="com.bellab.group.entity.Student_method2"/>
+        
+        
+    </session-factory>
+</hibernate-configuration>
